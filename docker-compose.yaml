@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  app:
+    image: express-docker
+    volumes:
+      - .:/usr/src/app
+    container_name: express-docker
+    restart: always
+    ports:
+      - 8080:3000
+    env_file:
+      - ./.env
+    command: sh ./start.sh
